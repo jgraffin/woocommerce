@@ -1,0 +1,20 @@
+cache-folder: .wordpress-download-cache # Optional - this is the default value
+dist-folder: dist # Optional - this is the default value
+
+plugins-to-download: # Optional
+  plugins:
+    - name: custom-post-type-ui
+    - name: custom-post-type-permalinks
+
+plugins-to-copy: # Optional
+  directory: plugins-to-copy
+  plugins:
+    - name: advanced-custom-fields-pro
+      type: directory
+      directory: advanced-custom-fields-pro
+    - name: advanced-custom-fields-pro-2
+      type: zip
+      filename: advanced-custom-fields-pro-2.zip
+
+custom-theme: # Optional
+  directory: tretisstore

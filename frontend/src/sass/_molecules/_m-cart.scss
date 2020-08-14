@@ -1,0 +1,39 @@
+.m-cart {
+  align-items: center;
+  border: 1px solid $c-03;
+  display: flex;
+  min-width: 90px;
+  height: 40px;
+
+  &__count {
+    align-items: center;
+    display: flex;
+    font-family: $font-secondary, $font-options;
+    font-size: 28px;
+    font-weight: 100;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 0 0 10px;
+    text-decoration: none;
+    width: 100%;
+
+    span {
+      align-items: center;
+      background-color: $c-03;
+      color: $c-04;
+      display: flex;
+      min-width: 42px;
+      justify-content: center;
+      padding: 0 10px;
+      height: 38px;
+    }
+
+    &.has-item {
+      span {
+        background-color: $c-05;
+        color: $c-03;
+        height: 38px;
+      }
+    }
+  }
+}

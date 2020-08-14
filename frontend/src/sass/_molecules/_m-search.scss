@@ -1,0 +1,14 @@
+.m-search {
+  display: block;
+  position: relative;
+  width: 430px;
+
+  input {
+    &[type='search'] {
+      border-radius: 0;
+      height: 40px;
+      padding: 10px 12px;
+      width: 100%;
+    }
+  }
+}

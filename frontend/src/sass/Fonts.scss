@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'fairviewregular';
+  src: url('http://res.cloudinary.com/tretis-com-br/raw/upload/v1544976833/fairview_regular-webfont.woff2')
+      format('woff2'),
+    url('http://res.cloudinary.com/tretis-com-br/raw/upload/v1544976833/fairview_regular-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-options: arial, Helvetica, sans-serif;
+$font-primary: 'Montserrat', $font-options;
+$font-secondary: 'fairviewregular', $font-options;
