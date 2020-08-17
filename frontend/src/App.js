@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Carousel from './components/organisms/Carousel';
+import CarouselAPI from './components/organisms/CarouselAPI';
 import Header from './components/organisms/Header';
 import './sass/App.scss';
 
@@ -10,7 +10,7 @@ const App = () => {
       <>
         <div className="app-root">
           <Header userName="Julio Graffin" />
-          <Carousel />
+          <CarouselAPI />
         </div>
       </>
     </Router>
