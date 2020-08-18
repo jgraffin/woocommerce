@@ -1,0 +1,16 @@
+2020-08-17T18:15:08+00:00 CRITICAL Uncaught Error: Call to undefined function acf_photo_gallery() in /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-content/themes/tretisstore/functions/post-types.php:100
+Stack trace:
+#0 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/class-wp-hook.php(287): my_rest_prepare_post(Object(WP_REST_Response), Object(WP_Post), Object(WP_REST_Request))
+#1 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters(Object(WP_REST_Response), Array)
+#2 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1825): apply_filters('rest_prepare_sl...', Object(WP_REST_Response), Object(WP_Post), Object(WP_REST_Request))
+#3 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(328): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#4 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/ in /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-content/themes/tretisstore/functions/post-types.php on line 100
+
+2020-08-17T18:16:32+00:00 CRITICAL Uncaught Error: Call to undefined function acf_photo_gallery() in /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-content/themes/tretisstore/functions/post-types.php:100
+Stack trace:
+#0 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/class-wp-hook.php(287): my_rest_prepare_post(Object(WP_REST_Response), Object(WP_Post), Object(WP_REST_Request))
+#1 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters(Object(WP_REST_Response), Array)
+#2 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1825): apply_filters('rest_prepare_sl...', Object(WP_REST_Response), Object(WP_Post), Object(WP_REST_Request))
+#3 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(328): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#4 /Applications/MAMP/htdocs/woocommerce/dist/wordpress/ in /Applications/MAMP/htdocs/woocommerce/dist/wordpress/wp-content/themes/tretisstore/functions/post-types.php on line 100
+

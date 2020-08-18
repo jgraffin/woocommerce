@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/image-tretislogo-loja.svg';
-import Cart from '../molecules/Cart';
-import SearchForm from '../molecules/SearchForm';
+import Cart from '../molecules/cart';
+import SearchForm from '../molecules/searchForm';
 
 const Header = (props) => {
   return (

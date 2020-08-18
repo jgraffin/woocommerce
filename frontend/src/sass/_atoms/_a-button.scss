@@ -1,5 +1,6 @@
 .a-button {
   align-items: center;
+  cursor: pointer;
   display: flex;
 
   &--logout {
@@ -21,5 +22,19 @@
     justify-content: center;
     top: 0;
     width: 40px;
+  }
+
+  &--modal-open {
+    background: red;
+    position: relative;
+    padding: 10px 16px;
+    z-index: 9999;
+  }
+
+  &--modal-close {
+    background: yellow;
+    position: relative;
+    padding: 10px 16px;
+    z-index: 9999;
   }
 }

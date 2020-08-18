@@ -1,7 +1,5 @@
 <?php 
 
-    include_once('./custom-fields.php');
-
     /**
      *  POST TYPE: Slider
      */
@@ -90,6 +88,8 @@
         }
         return $title;
     }  
+
+    
 
     add_filter( 'enter_title_here', 'change_title_text' );
     add_action('rest_api_init', 'register_rest_images' );
