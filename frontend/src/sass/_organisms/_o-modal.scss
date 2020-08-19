@@ -1,3 +1,13 @@
+@keyframes slideIn {
+  from {
+    transform: translate3d(-265px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .o-modal {
   background-color: rgba(0, 0, 0, 0.6);
   display: block;
@@ -7,4 +17,13 @@
   top: 0;
   width: 100%;
   z-index: 999;
+
+  &__menu {
+    animation: slideIn ease-in-out 0.3s forwards;
+    background-color: $c-05;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 265px;
+  }
 }

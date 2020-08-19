@@ -28,13 +28,15 @@
     background: red;
     position: relative;
     padding: 10px 16px;
-    z-index: 9999;
+    z-index: 10;
   }
 
   &--modal-close {
     background: yellow;
-    position: relative;
+    position: fixed;
+    left: 0;
     padding: 10px 16px;
+    top: 0;
     z-index: 9999;
   }
 }
