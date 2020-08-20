@@ -1,23 +1,24 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
 import { Link } from 'react-router-dom';
+import loadingImage from '../../images/loading.svg';
+import * as SliderAPI from '../../utils/getData';
 
 class CarouselContainer extends React.Component {
   state = {
     slides: [],
+    loading: true,
   };
 
   componentDidMount() {
-    fetch(
-      'http://localhost:8888/woocommerce/dist/wordpress/wp-json/wp/v2/slider?_embed'
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        this.setState({ slides: json });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    SliderAPI.getSlides().then((slides) => {
+      if (slides) {
+        this.setState({
+          slides: slides,
+          loading: false,
+        });
+      }
+    });
   }
 
   render() {
@@ -28,14 +29,13 @@ class CarouselContainer extends React.Component {
         <section className="o-carousel">
           <div className="container">
             {loading ? (
-              'Loading...'
+              <img src={loadingImage} alt="Carregando..." />
             ) : (
               <Carousel showArrows={false}>
                 {slides.map((item) => (
                   <Link to="/" key={item.id}>
                     <figure>
                       <img
-                        loading="lazy"
                         src={
                           item._embedded
                             ? item._embedded['wp:featuredmedia']['0'].source_url

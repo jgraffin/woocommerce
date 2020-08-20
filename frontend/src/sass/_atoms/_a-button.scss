@@ -1,5 +1,6 @@
 .a-button {
   align-items: center;
+  background: transparent;
   cursor: pointer;
   display: flex;
 
@@ -24,19 +25,27 @@
     width: 40px;
   }
 
-  &--modal-open {
-    background: red;
+  &--menu-open {
     position: relative;
     padding: 10px 16px;
     z-index: 10;
   }
 
-  &--modal-close {
-    background: yellow;
+  &--menu-close {
     position: fixed;
-    left: 0;
+    left: 200px;
     padding: 10px 16px;
     top: 0;
     z-index: 9999;
+
+    svg {
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+
+      path {
+        fill: $c-03;
+      }
+    }
   }
 }
