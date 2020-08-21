@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Carousel from 'react-elastic-carousel';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import changeTextAction from '../../actions/changeTextAction';
 import loadingImage from '../../images/loading.svg';
 import * as SliderAPI from '../../utils/getData';
 
-class CarouselContainer extends React.Component {
+class Children extends Component {
+  setText() {
+    this.props.dispatch(
+      changeTextAction.setText('... now is this brand new text!')
+    );
+  }
+
+  render() {
+    return (
+      <>
+        <button onClick={() => this.setText()}>Change my mind!</button>
+      </>
+    );
+  }
+}
+
+const ChildrenConnected = connect((store) => ({ text: store.text }))(Children);
+
+class CarouselContainer extends Component {
   state = {
     slides: [],
     loading: true,
@@ -48,6 +68,7 @@ class CarouselContainer extends React.Component {
                 ))}
               </Carousel>
             )}
+            <ChildrenConnected />
           </div>
         </section>
       </>
