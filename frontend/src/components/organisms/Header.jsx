@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/image-tretislogo-loja.svg';
 import Cart from '../molecules/cart';
 import SearchForm from '../molecules/searchForm';
-import MobileMenu from './mobileMenu';
+import MainMenu from './mainMenu';
 
 const Header = (props) => {
   const [menuActive, setMenuActive] = useState(false);
-  const [size, setSize] = useState([0]);
+  const [width, setWidth] = useState([0]);
 
   const MobileMenuButtonClose = () => {
     return (
@@ -23,12 +23,12 @@ const Header = (props) => {
   };
 
   const MobileOnly = () => {
-    const width = useWindowSize();
-    if (width <= 767) {
+    let screen = useWindowWidth();
+    if (screen <= 767) {
       return (
         <>
           {menuActive && <MobileMenuButtonClose />}
-          {menuActive && <MobileMenu />}
+          {menuActive && <MainMenu class="m-main-menu--mobile" />}
           <button
             className="a-button a-button--menu-open"
             onClick={() => setMenuActive(true)}
@@ -42,22 +42,20 @@ const Header = (props) => {
     }
   };
 
-  const useWindowSize = () => {
+  const useWindowWidth = () => {
     useLayoutEffect(() => {
-      function updateSize() {
-        setSize(window.innerWidth);
-      }
-      window.addEventListener('resize', updateSize);
-      updateSize();
-      return () => window.removeEventListener('resize', updateSize);
+      const updateWidth = () => setWidth(window.innerWidth);
+      window.addEventListener('resize', updateWidth);
+      updateWidth();
+      return () => window.removeEventListener('resize', updateWidth);
     }, []);
-    return size;
+    return width;
   };
 
   return (
     <>
       <header className="o-header">
-        <section className="o-header__account">
+        <div className="o-header__account">
           <div className="container">
             <h3>
               Olá, <span>{props.userName}</span>
@@ -67,10 +65,9 @@ const Header = (props) => {
               Sair
             </Link>
           </div>
-        </section>
-        <section className="o-header__navigation">
+        </div>
+        <div className="o-header__navigation">
           <div className="container">
-            {<MobileOnly />}
             <div className="m-site-name">
               <h1>
                 <Link to="/">
@@ -81,7 +78,11 @@ const Header = (props) => {
             <SearchForm />
             <Cart count="0" />
           </div>
-        </section>
+        </div>
+        <div className="o-header__menu">
+          <MobileOnly />
+          <MainMenu />
+        </div>
       </header>
     </>
   );
